@@ -3,6 +3,11 @@ const fs = require('fs');
 
 inquirer.prompt ([
     {
+        type: 'input',
+        message: 'What is your name?',
+        name: 'name',
+    },
+    {
         // title prompt
         type: 'input',
         message: "What's the project's title?",
@@ -30,7 +35,7 @@ inquirer.prompt ([
         // contribution guidelines prompt
         type: 'input',
         message: 'Provide guidelines to contribute in this project:',
-        name:'constribution',
+        name:'contributors',
     },
     {
         // test instructions prompt
@@ -54,7 +59,7 @@ inquirer.prompt ([
     {
         // github prompt
         type:'input',
-        message:"What's your Github account?",
+        message:"What's your Github username?",
         name:'github',
     },
     {
@@ -64,7 +69,38 @@ inquirer.prompt ([
         name:'email', 
     },
 ]).then((data) => {
-    console.log(data);
+    // console.log(data);
+        const readMe = 
+        `
+        # ${data.title}
+## Description:
+${data.description}
+## Table of Contents
+* [Installation](#installation)
+* [Usage](#usage)
+* [Contribution](#contribution)
+* [Test](#test)
+* [License](#license)
+* [Questions](#questions)
+## Installation: 
+${data.installation}
+## Usage: 
+${data.usage}
+## Contribution: 
+${data.contributors}
+## Test:  
+${data.test}
+## License: 
+${data.license}
+## Contact me 
+GitHub: https://github.com/${data.github}
+Email: ${data.email}
+`;
+    
+fs.writeFile('README.md', readMe, (err) =>
+    err ? console.log(err) : console.log('Success!')
+);
+console.log(readMe)
 });
 
 
