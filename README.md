@@ -1,2 +1,24 @@
-# README-generator
-command-line application that easily creates a README file by using inquirer npm. 
+
+        # readme
+## Description:
+descri
+## Table of Contents
+* [Installation](#installation)
+* [Usage](#usage)
+* [Contribution](#contribution)
+* [Test](#test)
+* [License](#license)
+* [Questions](#questions)
+## Installation: 
+installa
+## Usage: 
+steps
+## Contribution: 
+guidelines
+## Test:  
+test
+## License: 
+MIT License
+## Contact me 
+GitHub: https://github.com/josemartin357
+Email: martin me
