@@ -1,0 +1,23 @@
+{
+  "name": "readme-generator",
+  "version": "1.0.0",
+  "description": "command-line application that easily creates a README file by using inquirer npm.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/josemartin357/README-generator.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/josemartin357/README-generator/issues"
+  },
+  "homepage": "https://github.com/josemartin357/README-generator#readme",
+  "dependencies": {
+    "inquirer": "^8.1.5"
+  }
+}
