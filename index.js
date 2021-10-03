@@ -2,11 +2,11 @@ const inquirer = require("inquirer");
 const fs = require('fs');
 
 inquirer.prompt ([
-    {
-        type: 'input',
-        message: 'What is your name?',
-        name: 'name',
-    },
+    // {
+    //     type: 'input',
+    //     message: 'What is your name?',
+    //     name: 'name',
+    // },
     {
         // title prompt
         type: 'input',
@@ -16,25 +16,25 @@ inquirer.prompt ([
     {
         // description prompt
         type: 'input',
-        message: 'Provide a description of your project:',
+        message: 'Explain the motivation for the project, the reason to build it and what problem it solves.',
         name:'description',
     },
     {
         // installation instructions prompt
         type: 'input',
-        message: 'Provide installation instructions for this project:',
+        message: 'Provide steps required to install this project.',
         name:'installation',
     },
     {
         // usage information prompt
         type: 'input',
-        message: 'What are the steps to use this application?',
+        message: 'Provide instructions for use.',
         name:'usage',
     },
     {
         // contribution guidelines prompt
         type: 'input',
-        message: 'Provide guidelines to contribute in this project:',
+        message: 'Provide guidelines to contribute in this project.',
         name:'contributors',
     },
     {
@@ -82,17 +82,18 @@ ${data.description}
 * [Test](#test)
 * [License](#license)
 * [Questions](#questions)
-## Installation: 
+## Installation
 ${data.installation}
-## Usage: 
+## Usage
 ${data.usage}
-## Contribution: 
+## Contribution
 ${data.contributors}
-## Test:  
+## Test
 ${data.test}
-## License: 
+## License
 ${data.license}
-## Contact me 
+## Questions
+Use information below to contact me for questions or future collaboration.
 GitHub: https://github.com/${data.github}
 Email: ${data.email}
 `;
