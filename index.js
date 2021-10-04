@@ -73,7 +73,8 @@ inquirer.prompt ([
     // console.log(data);
         const readMe = 
         `
-        # ${data.title}
+# ${data.title}
+${renderBadge(data)}
 ## Description:
 ${data.description}
 ## Table of Contents
@@ -126,6 +127,26 @@ function renderLicenseSection(license) {
         return ''
     }
 }
+
+function renderBadge(license) {
+    switch (license.license) {
+      case 'MIT':
+        return '![License: MIT](https://img.shields.io/apm/l/vim-mode?style=for-the-badge)'
+
+      case 'GNU 2.0':
+        return '![License: GNU 2.0](https://img.shields.io/badge/LICENSE-GNU%202.0-blue)'
+
+      case 'GNU 3.0':
+        return '![License: GNU 3.0](https://img.shields.io/badge/LICENSE-GNU%203.0-blue)'
+        
+      case 'Apache':
+        return '![License: Apache](https://img.shields.io/aur/license/android-studio?style=for-the-badge)'
+
+      case 'None':
+        return ''
+    }
+}
+
 
 
 // PENDING: Add a badge for that license is added near the top of the README 
