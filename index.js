@@ -3,21 +3,29 @@ const fs = require('fs');
 const makeReadme = require('./makeReadme');
 
 inquirer.prompt ([
-    // {
-    //     type: 'input',
-    //     message: 'What is your name?',
-    //     name: 'name',
-    // },
+    {
+        // name prompt for licensing info
+        type: 'input',
+        message: 'What is your name?',
+        name: 'name',
+    },
     {
         // title prompt
         type: 'input',
         message: "What's the project's title?",
         name:'title',
     },
+
+    {
+        // year prompt for licensing info
+        type: 'input',
+        name: 'year',
+        message: 'In what year was this project developed?',
+    },
     {
         // description prompt
         type: 'input',
-        message: 'Explain the motivation for the project, the reason to build it and what problem it solves.',
+        message: 'Explain what the project does and what problem it solves.',
         name:'description',
     },
     {
@@ -69,85 +77,11 @@ inquirer.prompt ([
         message:"What's your email address?",
         name:'email', 
     },
-]).then((data) => {
-    // console.log(data);
-        const readMe = 
-        `
-# ${data.title}
-${renderBadge(data)}
-## Description:
-${data.description}
-## Table of Contents
-* [Installation](#installation)
-* [Usage](#usage)
-* [Contribution](#contribution)
-* [Test](#test)
-* [License](#license)
-* [Questions](#questions)
-## Installation
-${data.installation}
-## Usage
-${data.usage}
-## Contribution
-${data.contributors}
-## Test
-${data.test}
-## License
-${data.license}
-${renderLicenseSection(data)}
-## Questions
-Use information below to contact me for questions or future collaboration.
-GitHub: https://github.com/${data.github}
-Email: ${data.email}
-`;
-    
-fs.writeFile('README.md', readMe, (err) =>
+])
+.then((data) => {  
+fs.writeFile('README.md', makeReadme.makeReadMe(data), (err) =>
     err ? console.log(err) : console.log('Success!')
 );
-console.log(readMe)
+// console.log(data)
 });
-
-
-// function includes to explain what license covers
-function renderLicenseSection(license) {
-    switch (license.license) {
-      case 'MIT':
-        return makeReadme.mitText
-
-      case 'GNU 2.0':
-        return makeReadme.gnu2Text
-
-      case 'GNU 3.0':
-        return makeReadme.gnu3Text
-        
-      case 'Apache':
-          return makeReadme.apacheText
-
-      case 'None':
-        return ''
-    }
-}
-
-function renderBadge(license) {
-    switch (license.license) {
-      case 'MIT':
-        return '![License: MIT](https://img.shields.io/apm/l/vim-mode?style=for-the-badge)'
-
-      case 'GNU 2.0':
-        return '![License: GNU 2.0](https://img.shields.io/badge/LICENSE-GNU%202.0-blue)'
-
-      case 'GNU 3.0':
-        return '![License: GNU 3.0](https://img.shields.io/badge/LICENSE-GNU%203.0-blue)'
-        
-      case 'Apache':
-        return '![License: Apache](https://img.shields.io/aur/license/android-studio?style=for-the-badge)'
-
-      case 'None':
-        return ''
-    }
-}
-
-
-
-// PENDING: Add a badge for that license is added near the top of the README 
 
