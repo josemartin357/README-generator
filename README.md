@@ -19,8 +19,9 @@ https://user-images.githubusercontent.com/83382332/136499616-97da88a2-0d0d-4036-
 ## Installation
 To install project, simply download documents and save them to your computer.
 ## Technologies Used:
-Node.js__
-Inquirer__
+Node.js
+<br/>
+Inquirer
 ## Usage
 To use, type node index.js and answer all the prompted questions. Once complete, look for the README.md document created.
 ## Contribution
@@ -50,5 +51,6 @@ MIT
       SOFTWARE.
 ## Questions
 Use information below to contact me for questions or future collaboration.
-GitHub: https://github.com/josemartin357__
+GitHub: https://github.com/josemartin357
+<br/>
 Email: martin.bedoya2021@gmail.com
