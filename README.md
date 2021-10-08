@@ -51,6 +51,7 @@ MIT
       SOFTWARE.
 ## Questions
 Use information below to contact me for questions or future collaboration.
+<br/>
 GitHub: https://github.com/josemartin357
 <br/>
 Email: martin.bedoya2021@gmail.com
